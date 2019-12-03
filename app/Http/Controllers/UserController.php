@@ -15,17 +15,6 @@ class UserController extends Controller
     public function index()
     {
         $datas = User::all();
-
-        // dd($datas);
-
-        // echo $datas[0]['usr_name'] . '<br>';
-
-        // echo '<pre>';
-        // print_r($datas);
-        // echo '</pre>';
-        // exit();
-
-        // $datas->usr_name = "Marlon";
         return view("user.UserView", compact('datas'));
     }
 
