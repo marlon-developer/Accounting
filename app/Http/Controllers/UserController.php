@@ -14,20 +14,19 @@ class UserController extends Controller
      */
     public function index()
     {
-        // $data = UserModel::all();
-        // return view("user.UserView", compact('data'));
+        $datas = UserModel::all();
 
-        $data = UserModel::all();
+        // dd($datas);
 
-        dd($data);
+        // echo $datas[0]['usr_name'] . '<br>';
 
-        return view("user.UserView");
+        // echo '<pre>';
+        // print_r($datas);
+        // echo '</pre>';
+        // exit();
 
-        // $user = DB::select('SELECT * FROM contabilidade.usr_user');
-        // dd($user);
-        // return '<h1>Listagem de produtos com Laravel</h1>';
-
-        // phpinfo();
+        // $datas->usr_name = "Marlon";
+        return view("user.UserView", compact('datas'));
     }
 
     /**

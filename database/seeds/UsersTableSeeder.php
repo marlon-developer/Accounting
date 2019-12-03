@@ -13,22 +13,22 @@ class UsersTableSeeder extends Seeder
     {
         $user = [
             0 => [
-                "usr_name"     => "dev",
-                "usr_email"    => "dev@dev.com",
-                "usr_password" => "pasw",
+                "name"     => "dev",
+                "email"    => "dev@dev.com",
+                "password" => "pasw",
             ],
             1 => [
-                "usr_name"     => "dev1",
-                "usr_email"    => "dev1@dev.com",
-                "usr_password" => "pasw",
+                "name"     => "dev1",
+                "email"    => "dev1@dev.com",
+                "password" => "pasw",
             ],
             2 => [
-                "usr_name"     => "dev2",
-                "usr_email"    => "dev2@dev.com",
-                "usr_password" => "pasw",
+                "name"     => "dev2",
+                "email"    => "dev2@dev.com",
+                "password" => "pasw",
             ],
         ];
 
-        DB::table('usr_user')->insert($user);
+        DB::table('users')->insert($user);
     }
 }
