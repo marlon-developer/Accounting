@@ -179,19 +179,19 @@ return [
             'submenu' => [
                 [
                     'text' => 'Balanço Patrimonial',
-                    'url'  => '#',
+                    'url'  => 'company/balance-sheet',
                     'icon' => 'fas fa-fw fas-money',
                 ],
             ],
         ],
         [
             'text' => 'Plano de Contas',
-            'url'  => 'admin/settings',
+            'url'  => 'company/chart-accounts',
             'icon' => 'fas fa-fw fa-list',
         ],
         [
             'text' => 'profile',
-            'url'  => 'admin/settings',
+            'url'  => 'user.index',
             'icon' => 'fas fa-fw fa-user',
         ],
     ],

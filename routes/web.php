@@ -18,10 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/login', function () {
-//     return 'Login';
-// })->name('login');
 
 // Route::resource("user", "UserController")->middleware("auth");
 
 Route::resource("user", "UserController");
+
+// company/chart-accounts
+// company/balance-sheet

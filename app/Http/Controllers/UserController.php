@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\UserModel;
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $datas = UserModel::all();
+        $datas = User::all();
 
         // dd($datas);
 
