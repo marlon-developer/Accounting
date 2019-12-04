@@ -191,7 +191,7 @@ return [
         ],
         [
             'text' => 'profile',
-            'url'  => 'user.index',
+            'url'  => '/user/index',
             'icon' => 'fas fa-fw fa-user',
         ],
     ],
