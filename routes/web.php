@@ -19,8 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource("user", "UserController")->middleware("auth");
-
-// Route::resource("user", "UserController");
-Route::resource("chart-accounts", "UserController");
+Route::resource("user", "UserController");
+Route::resource("company", "UserController");
+Route::resource("plan-accounts", "UserController");
 Route::resource("balance-sheet", "UserController");

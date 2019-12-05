@@ -174,24 +174,23 @@ return [
 
     'menu'                                    => [
         [
-            'text'    => 'Empresas',
-            'icon'    => 'fas fa-fw fa-hospital',
-            'submenu' => [
-                [
-                    'text' => 'Balanço Patrimonial',
-                    'url'  => 'company/balance-sheet',
-                    'icon' => 'fas fa-fw fas-money',
-                ],
-            ],
-        ],
-        [
-            'text' => 'Plano de Contas',
-            'url'  => 'company/chart-accounts',
+            'text' => 'Balanço Patrimonial',
+            'url'  => '/balance-sheet',
             'icon' => 'fas fa-fw fa-list',
         ],
         [
-            'text' => 'profile',
-            'url'  => '/user/index',
+            'text' => 'Plano de Contas',
+            'url'  => '/plan-accounts',
+            'icon' => 'fas fa-fw fa-list',
+        ],
+        [
+            'text' => 'Empresas',
+            'url'  => '/company',
+            'icon' => 'fas fa-fw fa-list',
+        ],
+        [
+            'text' => 'Usuários',
+            'url'  => '/user',
             'icon' => 'fas fa-fw fa-user',
         ],
     ],

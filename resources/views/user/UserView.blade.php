@@ -32,7 +32,6 @@
                     </div>
                 </div>
                 <!-- End Selecionar Quantida a ser Mostrada por Lista -->
-
                 <!-- Filtro -->
                 <div class="col-sm-12 col-md-6">
                     <div id="example1_filter" class="dataTables_filter">
