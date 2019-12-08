@@ -1,15 +1,12 @@
-{{-- resources/views/admin/dashboard.blade.php --}}
-
 @extends('adminlte::page')
 
-@section('title', 'Usuários')
-
-
+@section('title', 'Plano de Contas')
 
 @section('content')
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">Plano de Contas</h3>
+        <a href="{{ route('plan-accounts.create') }}" class="btn btn-primary" style="float: right; width: 200px;">Adicionar</a>
     </div>
 
     <!-- Tabela -->
@@ -17,24 +14,23 @@
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Item</th>
                     <th>Tipo</th>
                     <th>Subtipo</th>
+                    <th>Item</th>
                 </tr>
             </thead>
             <tbody>
             @foreach($datas as $data)
                 <tr>
+                    <td>{{ $data->pa_type }}</td>
+                    <td>{{ $data->pa_subtype }}</td>
                     <td>{{ $data->pa_desc }}</td>
-                    <td></td>
-                    <td></td>
                 </tr>
             @endforeach
             </tbody>
         </table>
     </div>
 </div>
-
 @stop
 
 @section('css')

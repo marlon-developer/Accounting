@@ -9,7 +9,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Plano de Contas</h3>
+        <h3 class="card-title">Empresas</h3>
     </div>
 
     <!-- Tabela -->
@@ -17,17 +17,15 @@
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Item</th>
-                    <th>Tipo</th>
+                    <th>CNPJ</th>
                     <th>Subtipo</th>
                 </tr>
             </thead>
             <tbody>
             @foreach($datas as $data)
                 <tr>
-                    <td>{{ $data->pa_desc }}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ $data->cp_cnpj }}</td>
+                    <td>{{ $data->cp_desc }}</td>
                 </tr>
             @endforeach
             </tbody>

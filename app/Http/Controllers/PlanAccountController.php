@@ -15,9 +15,7 @@ class PlanAccountController extends Controller
     public function index()
     {
         $datas = PlanAccount::all();
-        dd($datas);
-        // return view("balanceSheet/BalanceSheetListView", compact('datas'));
-        return view("PlanAccountsView");
+        return view("PlanAccountsView", compact('datas'));
     }
 
     /**
@@ -27,7 +25,7 @@ class PlanAccountController extends Controller
      */
     public function create()
     {
-        //
+        return view("planAccount/CreatePlanAccountView");
     }
 
     /**
@@ -38,7 +36,15 @@ class PlanAccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pa = new PlanAccount;
+
+        $data           = $request->all();
+        $pa->pa_type    = $data['type'];
+        $pa->pa_subtype = $data['subtype'];
+        $pa->pa_desc    = $data['desc'];
+
+        $pa->save();
+        return $this->index();
     }
 
     /**
@@ -60,7 +66,9 @@ class PlanAccountController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = PlanAccount::findOrFail($id);
+        // dd($data);
+        return view('planAccount/CreatePlanAccountView', compact('data'));
     }
 
     /**
@@ -72,7 +80,7 @@ class PlanAccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd(__METHOD__);
     }
 
     /**
