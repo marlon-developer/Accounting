@@ -1,4 +1,3 @@
-<h1>Chart Accounts</h1>
 {{-- resources/views/admin/dashboard.blade.php --}}
 
 @extends('adminlte::page')
@@ -54,17 +53,15 @@
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Tipo</th>
-                    <th>Sub-Tipo</th>
-                    <th>Item</th>
+                    <th>CNPJ</th>
+                    <th>Empresa</th>
                 </tr>
             </thead>
             <tbody>
             @foreach($datas as $data)
                 <tr>
-                    <td>{{ $data->type }}</td>
-                    <td>{{ $data->subtype }}</td>
-                    <td>{{ $data->pa_desc }}</td>
+                    <td>{{ $data->cnpj }}</td>
+                    <td>{{ $data->cp_desc }}</td>
                 </tr>
             @endforeach
             </tbody>

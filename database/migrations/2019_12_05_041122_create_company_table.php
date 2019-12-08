@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCompaniesTable extends Migration
+class CreateCompanyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +14,11 @@ class CreateCompaniesTable extends Migration
     public function up()
     {
         Schema::create('companies', function (Blueprint $table) {
-            $table->bigIncrements('company_id')->unsigned();
-            $table->string('cp_cnpj', 14)->nullable();
-            $table->string('cp_desc', 100);
+            $table->bigIncrements('id')->unsigned();
+            $table->string('cp_cnpj', 20)->nullable();
+            $table->string('cp_desc', 250)->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
