@@ -15,7 +15,7 @@ class PlanAccountController extends Controller
     public function index()
     {
         $datas = PlanAccount::all();
-        return view("PlanAccountsView", compact('datas'));
+        return view("planAccount/PlanAccountsView", compact('datas'));
     }
 
     /**

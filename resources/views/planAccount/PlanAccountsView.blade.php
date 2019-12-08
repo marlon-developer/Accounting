@@ -9,9 +9,8 @@
         <a href="{{ route('plan-accounts.create') }}" class="btn btn-primary" style="float: right; width: 200px;">Adicionar</a>
     </div>
 
-    <!-- Tabela -->
     <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped">
+        <table id="tbl-plan-account" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Tipo</th>

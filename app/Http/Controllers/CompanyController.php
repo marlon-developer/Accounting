@@ -15,8 +15,7 @@ class CompanyController extends Controller
     public function index()
     {
         $datas = Companies::all();
-        // dd($datas);
-        return view("CompanyView", compact("datas"));
+        return view("company/CompanyView", compact("datas"));
     }
 
     /**
@@ -26,7 +25,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+        return view("company/CreateCompanyView");
     }
 
     /**
@@ -37,7 +36,14 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $company = new Companies;
+
+        $data             = $request->all();
+        $company->cp_cnpj = $data['cnpj'];
+        $company->cp_desc = $data['desc'];
+
+        $company->save();
+        return $this->index();
     }
 
     /**
@@ -59,7 +65,8 @@ class CompanyController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Companies::findOrFail($id);
+        return view("company/CreateCompanyView", compact("id"));
     }
 
     /**

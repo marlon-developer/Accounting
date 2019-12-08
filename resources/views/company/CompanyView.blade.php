@@ -1,24 +1,21 @@
-{{-- resources/views/admin/dashboard.blade.php --}}
-
 @extends('adminlte::page')
 
-@section('title', 'Usuários')
-
-
+@section('title', 'Empresas')
 
 @section('content')
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">Empresas</h3>
+        <a href="{{ route('company.create') }}" class="btn btn-primary" style="float: right; width: 200px;">Adicionar</a>
     </div>
 
-    <!-- Tabela -->
     <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped">
+        <table id="tbl-company" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>CNPJ</th>
-                    <th>Subtipo</th>
+                    <th>Nome</th>
+                    {{-- <th>Ação</th> --}}
                 </tr>
             </thead>
             <tbody>
@@ -26,13 +23,20 @@
                 <tr>
                     <td>{{ $data->cp_cnpj }}</td>
                     <td>{{ $data->cp_desc }}</td>
+                    {{-- <td>
+                        <a href="" class="btn btn-warning">
+                            <i class="fas fa-fw fa-edit"></i>
+                        </a>
+                        <a href="" class="btn btn-danger">
+                            <i class="fas fa-fw fa-trash"></i>
+                        </a>
+                    </td> --}}
                 </tr>
             @endforeach
             </tbody>
         </table>
     </div>
 </div>
-
 @stop
 
 @section('css')
