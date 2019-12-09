@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCompanyTable extends Migration
+class CreateTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateCompanyTable extends Migration
      */
     public function up()
     {
-        Schema::create('companies', function (Blueprint $table) {
-            $table->bigIncrements('id')->unsigned();
-            $table->string('cp_cnpj', 20)->nullable();
-            $table->string('cp_desc', 250)->nullable();
+        Schema::create('types', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('tp_type_desc', 250)->nullable();
+            $table->string('tp_subtype_desc', 250)->nullable();
+            $table->string('tp_item', 250)->nullable();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -29,6 +29,6 @@ class CreateCompanyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('types');
     }
 }

@@ -1,74 +1,42 @@
-{{-- resources/views/admin/dashboard.blade.php --}}
-
 @extends('adminlte::page')
 
-@section('title', 'Usuários')
-
-@section('content_header')
-    <h1>Usuários</h1>
-@stop
+@section('title', 'Empresas')
 
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Plano de Contas</h3>
+        <h3 class="card-title">Balanço Patrimonial</h3>
+        <a href="{{ route('balance-sheet.create') }}" class="btn btn-primary" style="float: right; width: 200px;">Adicionar</a>
     </div>
 
-    {{-- <div class="card-body">
-        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-            <!-- Row -->
-            <div class="row">
-                <!-- Selecionar Quantida a ser Mostrada por Lista -->
-                <div class="col-sm-12 col-md-6">
-                    <div class="dataTables_length" id="example1_length">
-                        <label>Show
-                            <select name="example1_length" aria-controls="example1" class="custom-select custom-select-sm form-control form-control-sm">
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                        <option value="100">100</option>
-                            </select> entries
-                        </label>
-                    </div>
-                </div>
-                <!-- End Selecionar Quantida a ser Mostrada por Lista -->
-                <!-- Filtro -->
-                <div class="col-sm-12 col-md-6">
-                    <div id="example1_filter" class="dataTables_filter">
-                        <label>Search:
-                            <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example1">
-                        </label>
-                    </div>
-                </div>
-                <!-- End Filtro -->
-            </div>
-            <!-- End Row -->
-        </div>
-    </div> --}}
-
-    <div class="col-sm-12 col-md-6"><div class="dataTables_length" id="example1_length"><label>Show <select name="example1_length" aria-controls="example1" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div>
-
-    <!-- Tabela -->
     <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped">
+        <table id="tbl-company" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>CNPJ</th>
-                    <th>Empresa</th>
+                    <th>Nome</th>
+                    {{-- <th>Ação</th> --}}
                 </tr>
             </thead>
             <tbody>
             @foreach($datas as $data)
                 <tr>
-                    <td>{{ $data->cnpj }}</td>
-                    <td>{{ $data->cp_desc }}</td>
+                    {{-- <td>{{ $data->cp_cnpj }}</td>
+                    <td>{{ $data->cp_desc }}</td> --}}
+                    {{-- <td>
+                        <a href="" class="btn btn-warning">
+                            <i class="fas fa-fw fa-edit"></i>
+                        </a>
+                        <a href="" class="btn btn-danger">
+                            <i class="fas fa-fw fa-trash"></i>
+                        </a>
+                    </td> --}}
                 </tr>
             @endforeach
             </tbody>
         </table>
     </div>
 </div>
-
 @stop
 
 @section('css')

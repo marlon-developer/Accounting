@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\BalanceSheets;
+use App\Companies;
+use App\PlanAccount;
 use Illuminate\Http\Request;
 
 class BalanceSheetController extends Controller
@@ -13,7 +16,11 @@ class BalanceSheetController extends Controller
      */
     public function index()
     {
-        //
+        $datas = BalanceSheets::all();
+
+        // dd($datas);
+
+        return view("balanceSheet/BalanceSheetView", compact("datas"));
     }
 
     /**
@@ -23,7 +30,16 @@ class BalanceSheetController extends Controller
      */
     public function create()
     {
-        //
+        // $pa = new PlanAccount;
+
+        // $data = $request->all();
+
+        // dd($datas);
+
+        $companies     = Companies::all();
+        $plan_accounts = PlanAccount::all();
+
+        return view("balanceSheet/CreateBalanceSheetView", compact("companies"), compact("plan_accounts"));
     }
 
     /**
@@ -34,7 +50,31 @@ class BalanceSheetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bs = new BalanceSheets;
+
+        $data = $request->all();
+
+        dd($data);
+
+        $bs->company = $data['company'];
+        // $bs->type     = $data['type'];
+        // $bs->subtype  = $data['subtype'];
+        // $bs->value    = $data['value'];
+        // $bs->discount = $data['discount'];
+
+        foreach ($data as $key => $value) {
+            $bs->type     = $data['type'][$key];
+            $bs->subtype  = $data['subtype'][$key];
+            $bs->value    = $data['value'][$key];
+            $bs->discount = $data['discount'][$key];
+
+            echo $bs->type . '<br>';
+        }
+
+        dd($bs);
+
+        $company->save();
+        return $this->index();
     }
 
     /**

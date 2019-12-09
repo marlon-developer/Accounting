@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlanAccountsTable extends Migration
+class CreateCompaniesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreatePlanAccountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('plan_accounts', function (Blueprint $table) {
-            $table->bigIncrements('id', true)->unsigned();
-            $table->string('pa_type', 250)->nullable();
-            $table->string('pa_subtype', 250)->nullable();
-            $table->string('pa_desc', 250)->nullable();
+        Schema::create('companies', function (Blueprint $table) {
+            $table->increments('id')->unsigned();
+            $table->string('cp_cnpj', 20)->nullable();
+            $table->string('cp_desc', 250)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +29,6 @@ class CreatePlanAccountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plan_accounts');
+        Schema::dropIfExists('companies');
     }
 }
