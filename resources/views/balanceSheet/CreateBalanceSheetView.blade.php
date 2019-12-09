@@ -40,7 +40,7 @@
 
                 <div class="col-sm-4 input">
                     <br>
-                    <label>Sutipo</label>
+                    <label>Subtipo</label>
                     <select name="subtype[]" class="form-control">
                         @foreach ($plan_accounts as $pa)
                             <option value="{{ $pa->type_id }}">{{ $pa->pa_desc }}</option>

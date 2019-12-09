@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCompaniesTable extends Migration
+class CreatePlanAccountsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateCompaniesTable extends Migration
      */
     public function up()
     {
-        Schema::create('companies', function (Blueprint $table) {
-            $table->increments('id')->unsigned();
-            $table->string('cp_cnpj', 20)->nullable();
-            $table->string('cp_desc', 250)->nullable();
+        Schema::create('plan_accounts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('item_types_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
+
+            // FK
+            $table->foreign('item_types_id')->references('id')->on('item_types')
+                ->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -29,6 +32,6 @@ class CreateCompaniesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('plan_accounts');
     }
 }

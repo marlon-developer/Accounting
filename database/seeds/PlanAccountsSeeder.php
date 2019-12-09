@@ -13,59 +13,70 @@ class PlanAccountsSeeder extends Seeder
     {
         $data = [
             0  => [
-                "type_id" => "1",
-                "pa_desc" => "Caixa",
+                "item_types_id" => "1",
             ],
             1  => [
-                "type_id" => "2",
-                "pa_desc" => "Depósitos bancários a vista",
+                "item_types_id" => "2",
             ],
             2  => [
-                "type_id" => "3",
-                "pa_desc" => "Numerários em transito",
+                "item_types_id" => "3",
             ],
             3  => [
-                "type_id" => "4",
-                "pa_desc" => "Aplicações de liquidez imediata",
+                "item_types_id" => "4",
             ],
             4  => [
-                "type_id" => "5",
-                "pa_desc" => "Duplicatas a receber",
+                "item_types_id" => "5",
             ],
             5  => [
-                "type_id" => "6",
-                "pa_desc" => "Duplicatas de Clientes",
+                "item_types_id" => "6",
             ],
             6  => [
-                "type_id" => "7",
-                "pa_desc" => "Duplicatas Controladas e coligadas – transações operacionais",
+                "item_types_id" => "7",
             ],
             7  => [
-                "type_id" => "8",
-                "pa_desc" => "Duplicatas descontadas",
+                "item_types_id" => "8",
             ],
             8  => [
-                "type_id" => "9",
-                "pa_desc" => "Provisão para créditos de liquidação duvidosa",
+                "item_types_id" => "9",
             ],
             9  => [
-                "type_id" => "10",
-                "pa_desc" => "Ajuste a valor presente",
+                "item_types_id" => "10",
             ],
             10 => [
-                "type_id" => "11",
-                "pa_desc" => "Faturamento para entrega futura",
+                "item_types_id" => "11",
             ],
             11 => [
-                "type_id" => "12",
-                "pa_desc" => "Saques de exportação",
+                "item_types_id" => "12",
             ],
             12 => [
-                "type_id" => "13",
-                "pa_desc" => "Saques de exportação descontados",
+                "item_types_id" => "13",
+            ],
+            13 => [
+                "item_types_id" => "14",
+            ],
+            14 => [
+                "item_types_id" => "15",
+            ],
+            15 => [
+                "item_types_id" => "16",
+            ],
+            16 => [
+                "item_types_id" => "17",
+            ],
+            17 => [
+                "item_types_id" => "18",
+            ],
+            18 => [
+                "item_types_id" => "19",
+            ],
+            19 => [
+                "item_types_id" => "20",
+            ],
+            20 => [
+                "item_types_id" => "21",
             ],
         ];
 
-        DB::table('plan_accounts')->insert($data);
+        DB::table('item_types')->insert($data);
     }
 }
